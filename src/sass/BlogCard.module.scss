@@ -1,0 +1,29 @@
+$breaktoint-desktop: 700px;
+
+.NewBlogCard {
+    margin: 16px;
+    border-radius: 5px;
+    padding: 16px;
+    box-shadow: 0 2px 5px #ccc;
+    box-sizing: border-box;
+    background-color: lightblue;
+
+    font-size: 14px;
+
+    .LikeCount {
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 18px;
+    }
+
+}
+
+@media (min-width: $breaktoint-desktop) {
+    .NewBlogCard {
+        width: 45%;
+        display: inline-block;
+    }
+}
