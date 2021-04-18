@@ -1,20 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-import { dumpLogs } from './Utils';
 
 import classes from './css/BlogCard.module.css';
 
-const BlogCard = (props) => {
-    dumpLogs(props)
-    return (
-        <div className={classes.NewBlogCard}>
-            <h1>{props.title}</h1>
-            <p>{props.description}</p>
+class BlogCard extends Component {
 
-            <p>Like Count: <span className={classes.LikeCount}>{props.likeBtn}</span></p>
-            <button onClick={props.onLikeBtnClick}>Like</button>
-        </div>
-    )
+    componentWillUnmount() {
+        console.log('Unmounting Blog Cards');
+    }
+
+    render() {
+        console.log('BlogCard render');
+        return (
+            <div className={classes.NewBlogCard}>
+                <h1>{this.props.title}</h1>
+                <p>{this.props.description}</p>
+
+                <p>Like Count: <span className={classes.LikeCount}>{this.props.likeBtn}</span></p>
+                <button onClick={this.props.onLikeBtnClick}>Like</button>
+            </div>
+        )
+    }
+    
 }
 
 /* class BlogCard extends Component {
